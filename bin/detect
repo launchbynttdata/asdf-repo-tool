@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# Detect the version of the repo-tool in the current directory
+if [ -x "$(command -v repo)" ]; then
+  version_output=$(repo --version 2>&1)
+  if [[ $version_output =~ v[0-9]+\.[0-9]+(\.[0-9]+)?-(launch|nexient) ]]; then
+    echo "$BASH_REMATCH"
+  else
+    echo "Version not detected"
+  fi
+else
+  echo "repo-tool not found"
+fi

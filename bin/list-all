@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+# List all available versions of the 'repo-tool' that contain 'nexient' or 'launch'
+VERSIONS=$(git ls-remote --tags https://github.com/launchbynttdata/git-repo.git | awk -F/ '{print $NF}' | grep -E 'nexient|launch' | sed 's/\^{}//' | sort -V | uniq)
+echo $VERSIONS

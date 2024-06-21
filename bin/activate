@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# Set up the environment to use the correct version of the 'repo-tool'
+export PATH="$ASDF_INSTALL_PATH:$PATH"
